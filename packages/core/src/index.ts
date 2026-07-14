@@ -1,1 +1,1 @@
-export default class PDF {}
+export { PDF } from "./api/PDF";
