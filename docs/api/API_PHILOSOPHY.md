@@ -92,3 +92,9 @@ Avoid wrapping pure domain logic in try/catch unless the error is being transfor
 The SDK should communicate failures using domain-specific error types instead of generic JavaScript errors.
 
 Consumers should be able to distinguish different failure scenarios using the type system rather than string comparisons.
+
+## Infrastructure Depends on the Domain
+
+The domain model (`PdfDocument`, `PdfPage`, etc.) must not depend on serialization, parsing, storage, or rendering.
+
+Infrastructure components depend on the domain model—not the other way around.
