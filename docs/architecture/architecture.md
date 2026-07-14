@@ -347,3 +347,11 @@ The SDK has one responsibility:
 A developer should be able to install PDF Workspace and feel that working with PDFs is as natural as working with JavaScript objects.
 
 The complexity of the PDF specification belongs inside the SDK—not in the developer's application.
+
+## Extract packages only after proving the need
+
+Modules should be separated by responsibility from the beginning.
+
+Packages should be separated only when there is clear evidence that independent packaging provides value.
+
+Package boundaries introduce operational complexity and should not be created speculatively.
