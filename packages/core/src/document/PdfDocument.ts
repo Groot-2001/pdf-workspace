@@ -1,3 +1,4 @@
+import { PdfSerializer } from "../serialization/PdfSerializer";
 import { PdfPage } from "./PdfPage";
 
 export class PdfDocument {
@@ -14,5 +15,9 @@ export class PdfDocument {
         this.pages.push(page);
     
         return page;
+      }
+    
+      public toBytes(): Uint8Array {
+        return new PdfSerializer().serialize(this);
       }
 }
