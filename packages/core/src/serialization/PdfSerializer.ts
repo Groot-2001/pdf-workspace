@@ -8,6 +8,7 @@ import { CatalogWriter } from "./writers/CatalogWriter";
 import { PagesWriter } from "./writers/PagesWriter";
 import { PageWriter } from "./writers/PageWriter";
 import { CrossReferenceWriter } from "./writers/CrossReferenceWriter";
+import { TrailerWriter } from "./writers/TrailerWriter";
 
 export class PdfSerializer {
   public serialize(document: PdfDocument): Uint8Array {
@@ -30,6 +31,13 @@ export class PdfSerializer {
     new CrossReferenceWriter(
       writer,
       context.getOffsets(),
+    ).write();
+
+    const xrefOffset = writer.position;
+
+    new TrailerWriter(
+      writer,
+      xrefOffset,
     ).write();
 
     return writer.toUint8Array();
