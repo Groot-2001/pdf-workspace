@@ -1,23 +1,23 @@
 import { describe, expect, it } from "vitest";
 
 import { BinaryWriter } from "../src/serialization/BinaryWriter";
-import { PageWriter } from "../src/serialization/writers/PageWriter";
+import { PagesWriter } from "../src/serialization/writers/PagesWriter";
 
-describe("PageWriter", () => {
-  it("writes a page object", () => {
+describe("PagesWriter", () => {
+  it("writes a pages object", () => {
     const writer = new BinaryWriter();
 
-    new PageWriter(writer).write();
+    new PagesWriter(writer).write();
 
     const output = new TextDecoder().decode(writer.toUint8Array());
 
     expect(output).toBe(
       [
-        "3 0 obj",
+        "2 0 obj",
         "<<",
-        "/Type /Page",
-        "/Parent 2 0 R",
-        "/MediaBox [0 0 595 842]",
+        "/Type /Pages",
+        "/Count 1",
+        "/Kids [3 0 R]",
         ">>",
         "endobj",
         "",
@@ -28,7 +28,7 @@ describe("PageWriter", () => {
   it("updates the writer position", () => {
     const writer = new BinaryWriter();
 
-    new PageWriter(writer).write();
+    new PagesWriter(writer).write();
 
     expect(writer.position).toBeGreaterThan(0);
   });
