@@ -10,10 +10,13 @@ export class BinaryWriter {
     }
   
     public write(data: string): void {
+      //convert string into Uint8Array of UTF-8 bytes
       const bytes = this.encoder.encode(data);
   
+      //push that bytes into chunks array
       this.chunks.push(bytes);
   
+      //for each byte move the postion to the next to write
       this._position += bytes.length;
     }
   
