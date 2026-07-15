@@ -1,0 +1,15 @@
+{
+    "name": "@pdf-workspace/playground",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "dev": "tsx src/generate.ts",
+      "build": "tsc -p tsconfig.json"
+    },
+    "dependencies": {
+      "@pdf-workspace/core": "workspace:*"
+    },
+    "devDependencies": {
+      "tsx": "^4.20.5"
+    }
+  }
