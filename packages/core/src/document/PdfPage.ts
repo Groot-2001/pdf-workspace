@@ -1,8 +1,8 @@
+import { DrawOperation } from "../graphics/DrawOperation";
+
 /**
  * Represents a single page inside a PDF document.
  */
  export class PdfPage {
-  constructor(
-    public readonly index: number
-  ) {}
+  private readonly operations: DrawOperation[] = [];
 }
