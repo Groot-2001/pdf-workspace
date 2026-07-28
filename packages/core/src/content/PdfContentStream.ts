@@ -1,3 +1,5 @@
+import type { PdfOperation } from "./PdfOperation"
+
 /**
  * Represents the graphical content of a PDF page.
  *
@@ -7,4 +9,6 @@
  * At the moment, it serves as a domain placeholder while the
  * page content model is being introduced.
  */
-export class PdfContentStream{};
+ export class PdfContentStream {
+    private readonly operations: PdfOperation[] = [];
+}
