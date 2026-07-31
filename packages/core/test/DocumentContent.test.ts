@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { DocumentContent } from "../src/document/DocumentContent";
-import { Text } from "../src/elements/Text";
+import { Paragraph } from "../src/elements/Paragraph";
 
 describe("DocumentContent", () => {
-    it("should add document elements", () => {
+    it("should store paragraphs", () => {
         const content = new DocumentContent();
 
-        content.add(new Text("Hello"));
+        content.addParagraph(new Paragraph());
 
-        expect(content.getElements()).toHaveLength(1);
+        expect(content.getParagraphs()).toHaveLength(1);
     });
 });
