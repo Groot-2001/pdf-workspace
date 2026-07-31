@@ -1,15 +1,22 @@
 import { Text } from "../elements/Text";
-import { PageComposer } from "../layout/PageComposer";
+import { DocumentContent } from "./DocumentContent";
 
 /**
  * Represents a single page inside a PDF document.
  */
- export class PdfPage {
-  private readonly composer = new PageComposer();
+export class PdfPage {
+    private readonly content = new DocumentContent();
 
-  public text(value: string): this {
-    this.composer.add(new Text(value));
+    public text(value: string): this {
+        this.content.add(new Text(value));
 
-    return this;
-  }
+        return this;
+    }
+
+    /**
+     * @internal
+     */
+    public getContent(): DocumentContent {
+        return this.content;
+    }
 }
