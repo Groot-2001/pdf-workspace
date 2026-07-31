@@ -1,13 +1,13 @@
-import { LayoutText } from "./LayoutText";
+import { LayoutPage } from "./LayoutPage";
 
 export class LayoutResult {
-    private readonly items: LayoutText[] = [];
+    private readonly pages: LayoutPage[] = [];
 
-    public add(item: LayoutText): void {
-        this.items.push(item);
+    public addPage(page: LayoutPage): void {
+        this.pages.push(page);
     }
 
-    public getItems(): readonly LayoutText[] {
-        return this.items;
+    public getPages(): readonly LayoutPage[] {
+        return this.pages;
     }
 }
