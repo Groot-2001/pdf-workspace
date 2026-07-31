@@ -1,13 +1,13 @@
-import { DocumentElement } from "../elements/DocumentElement";
+import { Paragraph } from "../elements/Paragraph";
 
 export class DocumentContent {
-    private readonly elements: DocumentElement[] = [];
+    private readonly paragraphs: Paragraph[] = [];
 
-    public add(element: DocumentElement): void {
-        this.elements.push(element);
+    public addParagraph(paragraph: Paragraph): void {
+        this.paragraphs.push(paragraph);
     }
 
-    public getElements(): readonly DocumentElement[] {
-        return this.elements;
+    public getParagraphs(): readonly Paragraph[] {
+        return this.paragraphs;
     }
 }

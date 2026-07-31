@@ -1,3 +1,4 @@
+import { Paragraph } from "../elements/Paragraph";
 import { Text } from "../elements/Text";
 import { DocumentContent } from "./DocumentContent";
 
@@ -8,10 +9,14 @@ export class PdfPage {
     private readonly content = new DocumentContent();
 
     public text(value: string): this {
-        this.content.add(new Text(value));
-
-        return this;
-    }
+      const paragraph = new Paragraph();
+  
+      paragraph.addText(new Text(value));
+  
+      this.content.addParagraph(paragraph);
+  
+      return this;
+  }
 
     /**
      * @internal
