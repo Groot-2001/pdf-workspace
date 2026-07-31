@@ -1,3 +1,4 @@
+import { Text } from "../elements/Text";
 import { PageComposer } from "../layout/PageComposer";
 
 /**
@@ -7,7 +8,8 @@ import { PageComposer } from "../layout/PageComposer";
   private readonly composer = new PageComposer();
 
   public text(value: string): this {
-      this.composer.text(value);
-      return this;
+    this.composer.add(new Text(value));
+
+    return this;
   }
 }
