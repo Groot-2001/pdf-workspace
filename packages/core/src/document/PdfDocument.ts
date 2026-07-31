@@ -16,6 +16,10 @@ export class PdfDocument {
         return page;
     }
 
+    public getPages(): readonly PdfPage[] {
+      return this.pages;
+  }
+
     public toBytes(): Uint8Array {
         return new PdfSerializer().serialize(this);
     }
