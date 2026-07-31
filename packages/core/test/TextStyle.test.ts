@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {TextStyle} from "../src/style/TextStyle"
+import {TextStyle} from "../src/style/TextStyle";
 import {Text} from "../src/elements/Text"
 
 describe("TextStyle", () => {
