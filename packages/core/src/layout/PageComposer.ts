@@ -1,7 +1,9 @@
-export class PageComposer {
-    private readonly texts: string[] = [];
+import { DocumentElement } from "../elements/DocumentElement";
 
-    public text(value: string): void {
-        this.texts.push(value);
+export class PageComposer {
+    private readonly elements: DocumentElement[] = [];
+
+    public add(element: DocumentElement): void {
+        this.elements.push(element);
     }
 }
